@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "name": "banao-node",
+    "builds": [
+      {
+        "src": "src/server.ts",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["prisma/schema.prisma", "src/**/*.ts"]
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "src/server.ts"
+      }
+    ]
+  }
+  
